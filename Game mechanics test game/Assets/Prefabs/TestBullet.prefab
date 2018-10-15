@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 54738760951034572}
   - component: {fileID: 136962812191922122}
   - component: {fileID: 114466413071426100}
+  - component: {fileID: 114364309141774652}
   m_Layer: 0
   m_Name: TestBullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +102,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114466413071426100
+--- !u!114 &114364309141774652
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -113,6 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  destroyTime: 5
+--- !u!114 &114466413071426100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1420733167282184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7a2e77dd0207642a01111e7c8e92be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
   destroyTime: 10
 --- !u!136 &136962812191922122
 CapsuleCollider:
