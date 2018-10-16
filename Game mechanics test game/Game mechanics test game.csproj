@@ -306,6 +306,7 @@
     <Compile Include="Assets\Script\death.cs" />
     <Compile Include="Assets\Script\fireBullet.cs" />
     <Compile Include="Assets\Script\shieldBehaviour.cs" />
+    <Compile Include="Assets\Script\shieldGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Users\nkhonculada\AppData\Local\Unity\cache\packages\packages.unity.com\com.unity.package-manager-ui@1.8.8\Editor\Resources\Styles\Main_Dark.uss" />

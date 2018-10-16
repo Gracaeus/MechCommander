@@ -5,13 +5,18 @@ using UnityEngine;
 public class death : MonoBehaviour {
     public GameObject shield;
     public shieldBehaviour shieldHealth;
+
+    private bool shieldActivated = false;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.CompareTag("bullet"))
         {
-            if (shieldHealth.shieldHP >= 1)
+            if (shieldActivated == false)
             {
-                shield.SetActive(true);
+                shieldActivated = true;
+
+                //shieldGenerator 
             }
             else
             {

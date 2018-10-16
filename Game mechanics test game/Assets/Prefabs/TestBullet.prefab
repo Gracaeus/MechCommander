@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 54738760951034572}
   - component: {fileID: 136962812191922122}
   - component: {fileID: 114466413071426100}
-  - component: {fileID: 114364309141774652}
   m_Layer: 0
   m_Name: TestBullet
   m_TagString: bullet
@@ -39,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420733167282184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0025037, y: 0.39135, z: 1.9402}
+  m_LocalPosition: {x: 5.93, y: 0.39135, z: 1.9402}
   m_LocalScale: {x: 0.33665624, y: 0.27733502, z: 0.3041684}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,19 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114364309141774652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1420733167282184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7a2e77dd0207642a01111e7c8e92be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  destroyTime: 5
 --- !u!114 &114466413071426100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  destroyTime: 10
+  destroyTime: 5
+  damage: 10
+  shieldAsset: {fileID: 1323835441721716, guid: 1d39fa481cb5e5b4a8fd33547c223032,
+    type: 2}
 --- !u!136 &136962812191922122
 CapsuleCollider:
   m_ObjectHideFlags: 1

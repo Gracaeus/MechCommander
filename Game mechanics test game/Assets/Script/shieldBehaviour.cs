@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class shieldBehaviour : MonoBehaviour {
 
-    public int shieldHP = 100;
+    public float shieldHP = 100f;
+    public GameObject shield;
 
-	
-	private void OnCollisionEnter(Collision collision)
+    public void takeDamage(float damage)
     {
-        if (collision.collider.gameObject.CompareTag("bullet"))
+        shieldHP -= damage;
+
+
+        if (shieldHP <= 0)
         {
-            shieldHP -= 10;
-            System.Console.WriteLine(shieldHP);
-            if (shieldHP<=0)
-            {
-                Destroy(gameObject);
-            }
+            shield.SetActive(false);
         }
-       
     }
+	
 }

@@ -23,26 +23,27 @@ GameObject:
   - component: {fileID: 23079803558199620}
   - component: {fileID: 135914775227992348}
   - component: {fileID: 111286477991920316}
+  - component: {fileID: 114122239075533046}
   m_Layer: 0
   m_Name: shield
-  m_TagString: Untagged
+  m_TagString: shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4906444688781500
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1323835441721716}
-  m_LocalRotation: {x: -0, y: 0.9998311, z: -0, w: -0.018382069}
-  m_LocalPosition: {x: 0.10091278, y: 0.59999996, z: 1.1702249}
+  m_LocalRotation: {x: 0.009087184, y: 0.86911577, z: 0.49426696, w: -0.015978845}
+  m_LocalPosition: {x: 0.10091424, y: 0.6, z: 1.170225}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -178.15973, y: -359.42142, z: 224.56744}
 --- !u!23 &23079803558199620
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -93,12 +94,26 @@ Animation:
   m_GameObject: {fileID: 1323835441721716}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
+  m_Animation: {fileID: 7400000, guid: 16774ad3e5a88ae428d04d76ffb4cb77, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 16774ad3e5a88ae428d04d76ffb4cb77, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &114122239075533046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1323835441721716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64f22d2fd1442a428d4433fb01c1f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldHP: 100
+  shield: {fileID: 0}
 --- !u!135 &135914775227992348
 SphereCollider:
   m_ObjectHideFlags: 1
