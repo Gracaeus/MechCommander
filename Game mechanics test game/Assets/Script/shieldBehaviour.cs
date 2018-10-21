@@ -6,6 +6,9 @@ public class shieldBehaviour : MonoBehaviour {
 
     public float shieldHP = 100f;
     public GameObject shield;
+	Animator anime;
+
+
 
     public void takeDamage(float damage)
     {

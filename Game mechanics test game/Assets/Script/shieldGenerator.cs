@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class shieldGenerator : MonoBehaviour {
-    public GameObject shield;
-    public shieldBehaviour shieldHealth;
+	//public GameObject shield;
+	//public shieldBehaviour shieldHealth;
 
-    private bool shieldActivated = false;
+	public GameObject shieldPrefab;
+	public Transform shieldSpawn;
 
-    private void OnCollisionEnter(Collision collision)
+	private bool shieldActivated = false;
+
+	/*private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.gameObject.CompareTag("bullet"))
         {
@@ -24,5 +27,11 @@ public class shieldGenerator : MonoBehaviour {
             }
 
         }
-    }
+    }*/
+
+	public void SpawnShield()
+	{
+		Instantiate(shieldPrefab, shieldSpawn.position, shieldSpawn.rotation);
+	}
+
 }

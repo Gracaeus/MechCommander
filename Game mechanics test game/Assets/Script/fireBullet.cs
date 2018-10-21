@@ -9,7 +9,7 @@ public class fireBullet : MonoBehaviour {
     private bool isFiring = false;
 
     // Use this for initialization
-   void Fire()
+   public void Fire()
     {
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
@@ -23,7 +23,7 @@ public class fireBullet : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
+	/*void Update () {
 		if (Input.GetMouseButton(0))
         {
             if (isFiring == false)
@@ -32,5 +32,5 @@ public class fireBullet : MonoBehaviour {
             }
             
         }
-	}
+	}*/
 }

@@ -115,7 +115,7 @@ MonoBehaviour:
   speed: 100
   destroyTime: 5
   damage: 10
-  shieldAsset: {fileID: 1323835441721716, guid: 1d39fa481cb5e5b4a8fd33547c223032,
+  shieldAsset: {fileID: 1459269359089678, guid: e6ff5f56776f895408f919eca8d5c5dd,
     type: 2}
 --- !u!136 &136962812191922122
 CapsuleCollider:

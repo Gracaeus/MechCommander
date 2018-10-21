@@ -30,7 +30,7 @@ public class bullet : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.gameObject.CompareTag("shield"))
+        if (collision.collider.gameObject.CompareTag("Enemy"))
         {
             shield.takeDamage(damage);
         }
