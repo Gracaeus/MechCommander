@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  destroyTime: 5
+  destroyTime: 0.5
   damage: 10
   shieldAsset: {fileID: 1459269359089678, guid: e6ff5f56776f895408f919eca8d5c5dd,
     type: 2}
