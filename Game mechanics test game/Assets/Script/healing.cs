@@ -6,11 +6,15 @@ public class healing : MonoBehaviour {
 
 	public GameObject healingPrefab;
 	public Transform healingSpawn;
-
-
+	public float destroyTime = 1f;
 
 	public void SpawnHealth()
 	{
 		Instantiate(healingPrefab, healingSpawn.position, healingSpawn.rotation);
+		Invoke("Die", destroyTime);
+	}
+	void Die()
+	{
+		Destroy(gameObject);
 	}
 }

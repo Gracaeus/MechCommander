@@ -7,9 +7,15 @@ public class fireBullet : MonoBehaviour {
     public Transform bulletSpawn;
     public float fireTime = 0.1f;
     private bool isFiring = false;
+	public GameObject mech;
 
-    // Use this for initialization
-   public void Fire()
+	// Use this for initialization
+	void Start()
+	{
+		
+		bulletSpawn = mech.GetComponent<Transform>("PlayerTwoBulletSpawn");
+	}
+    public void Fire()
     {
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
