@@ -258,6 +258,8 @@ GameObject:
   - component: {fileID: 95904440813371946}
   - component: {fileID: 54534702096795616}
   - component: {fileID: 65881313608111780}
+  - component: {fileID: 114753066606785548}
+  - component: {fileID: 114902568093822570}
   m_Layer: 0
   m_Name: MechArmCannon
   m_TagString: Untagged
@@ -887,7 +889,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328027377371772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.72, y: -2.14, z: -11.74}
+  m_LocalPosition: {x: -12.52, y: -2.0218954, z: -4.45}
   m_LocalScale: {x: 0.03456513, y: 0.034565113, z: 0.034565113}
   m_Children:
   - {fileID: 4247270606790308}
@@ -1012,13 +1014,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1586490523288426}
-  m_LocalRotation: {x: -0, y: 0.025323894, z: -0, w: 0.9996793}
-  m_LocalPosition: {x: -70.200005, y: 61.3, z: 49.80001}
+  m_LocalRotation: {x: -0, y: -0.045261227, z: -0, w: 0.9989752}
+  m_LocalPosition: {x: 58.1, y: 61.3, z: 58.299995}
   m_LocalScale: {x: -1.6400001, y: -1.64, z: -1.6400002}
   m_Children: []
   m_Father: {fileID: 4693478411214076}
   m_RootOrder: 34
-  m_LocalEulerAnglesHint: {x: 0, y: 2.9020002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -5.188, z: 0}
 --- !u!4 &4867261353967556
 Transform:
   m_ObjectHideFlags: 1
@@ -2531,7 +2533,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1328027377371772}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 176.36334, y: 134.16693, z: 105.66776}
@@ -2554,3 +2556,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114753066606785548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328027377371772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4645449fc1d0b438849c7a2b1c5438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStartHealth: 100
+  playerHealth: 100
+  rb: {fileID: 54534702096795616}
+  postion: {fileID: 0}
+  mySpawn: {fileID: 0}
+--- !u!114 &114902568093822570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1328027377371772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0836d45c069a946bf820df9111ef88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1420733167282184, guid: fb80535d71c78a242acb9f9ed13ae130,
+    type: 2}
+  bulletSpawn: {fileID: 4860331658619582}
+  fireTime: 0.5

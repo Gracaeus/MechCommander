@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 54014094332499410}
   - component: {fileID: 65614682517080586}
   - component: {fileID: 114565275595258506}
+  - component: {fileID: 114871198726367394}
   m_Layer: 0
   m_Name: MechArmCannonPlayerTwo
   m_TagString: Enemy
@@ -2569,3 +2570,20 @@ MonoBehaviour:
   playerStartHealth: 100
   playerHealth: 100
   rb: {fileID: 54014094332499410}
+  postion: {fileID: 0}
+  mySpawn: {fileID: 0}
+--- !u!114 &114871198726367394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1629869187248464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0836d45c069a946bf820df9111ef88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1420733167282184, guid: fb80535d71c78a242acb9f9ed13ae130,
+    type: 2}
+  bulletSpawn: {fileID: 4155278990883986}
+  fireTime: 0.5

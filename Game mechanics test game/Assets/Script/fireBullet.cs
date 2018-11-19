@@ -7,13 +7,13 @@ public class fireBullet : MonoBehaviour {
     public Transform bulletSpawn;
     public float fireTime = 0.1f;
     private bool isFiring = false;
-	public GameObject mech;
+	//public GameObject mech;
 
 	// Use this for initialization
 	void Start()
 	{
 		
-		bulletSpawn = mech.GetComponent<Transform>("PlayerTwoBulletSpawn");
+		//bulletSpawn = GetComponent<Transform>("PlayerTwoBulletSpawn");
 	}
     public void Fire()
     {

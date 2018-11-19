@@ -7,17 +7,17 @@ public class bullet : MonoBehaviour {
     public float destroyTime = 0.07f;
     public float damage = 10f;
 
-	private health player;
-    private shieldBehaviour shield;
-    public GameObject shieldAsset;
-	public GameObject playerAsset;
+	//private health player;
+ //   private shieldBehaviour shield;
+ //   public GameObject shieldAsset;
+	//public GameObject playerAsset;
 
     
     void Start()
     {
         Invoke("Die", destroyTime);
-		player = playerAsset.GetComponent<health>();
-        shield = shieldAsset.GetComponent<shieldBehaviour>();
+		//player = playerAsset.GetComponent<health>();
+  //      shield = shieldAsset.GetComponent<shieldBehaviour>();
 
     }
     void Die()

@@ -6,24 +6,28 @@ public class health : MonoBehaviour
 {
 	public float playerStartHealth=100f;
 	public float playerHealth;
-	public Rigidbody rb;
+	//public Rigidbody rb;
+ //   public turnManager postion;
+ //   public Transform mySpawn;
+    
 	// Use this for initialization
-	private void OnEnable()
+	void OnEnable()
 	{
 		playerHealth = playerStartHealth;
-		rb = GetComponent<Rigidbody>();
-		rb.isKinematic = true;
+		//rb = GetComponent<Rigidbody>();
+		//rb.isKinematic = true;
 		gameObject.SetActive(true);
+        //SetPosition();
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
 		
-		if (playerHealth <= 0)
-		{
-			rb.isKinematic = false;
-		}
+		//if (playerHealth <= 0)
+		//{
+		//	rb.isKinematic = false;
+		//}
 	}
 	public void Hit(float damage)
 	{
@@ -32,10 +36,25 @@ public class health : MonoBehaviour
 		{
 			//rb.isKinematic = false;
 			gameObject.SetActive(false);
+            GetComponent<Rigidbody>().isKinematic = false;
+            //Invoke("Die", destroyTime);
 		}
 	}
-	public void SetPosition()
-	{
-		
-	}
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+	//public void SetPosition()
+	//{
+	//	if(mySpawn.tag == "playerOneSpawn")
+ //       {
+ //           postion.playerOneAsset = gameObject;
+ //       }
+ //       if (mySpawn.tag == "playerTwoSpawn")
+ //       {
+ //           postion.playerTwoAsset = gameObject;
+ //       }
+
+ //   }
 }
