@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class turnBasedCombat : MonoBehaviour {
     private bool choiceOneMade;
@@ -21,6 +22,12 @@ public class turnBasedCombat : MonoBehaviour {
     private healing playerOneHeal;
     private healing playerTwoHeal;
 
+    private health playerOneHealth;
+    private health playerTwoHealth;
+
+    public Slider playerOneHealthBar;
+    public Slider playerTwoHealthBar;
+
 	void Start () 
     {
         //Sets the choice made to false so the players can pick their choices
@@ -31,11 +38,13 @@ public class turnBasedCombat : MonoBehaviour {
         playerOneShield = playerOneAsset.GetComponent<shieldGenerator>();
         playerOneAttack = playerOneAsset.GetComponent<fireBullet>();
         playerOneHeal = playerOneAsset.GetComponent<healing>();
+        playerOneHealth = playerOneAsset.GetComponent<health>();
 
         //Allows the combat manager to access the neccessary scripts for the second player
         playerTwoShield = playerTwoAsset.GetComponent<shieldGenerator>();
         playerTwoAttack = playerTwoAsset.GetComponent<fireBullet>();
         playerTwoHeal = playerTwoAsset.GetComponent<healing>();
+        playerTwoHealth = playerTwoAsset.GetComponent<health>();
 
     }
 
@@ -98,12 +107,15 @@ public class turnBasedCombat : MonoBehaviour {
         {
             case "attack":
                 playerOneAttack.Fire();
+                moveOne = "";
                 break;
             case "shield":
                 playerOneShield.SpawnShield();
+                moveOne = "";
                 break;
             case "heal":
                 playerOneHeal.SpawnHealth();
+                moveOne = "";
                 break;
         }
 
@@ -111,12 +123,15 @@ public class turnBasedCombat : MonoBehaviour {
         {
             case "attack":
                 playerTwoAttack.Fire();
+                moveTwo = "";
                 break;
             case "shield":
                 playerTwoShield.SpawnShield();
+                moveTwo = "";
                 break;
             case "heal":
                 playerTwoHeal.SpawnHealth();
+                moveTwo = "";
                 break;
         }
 
@@ -127,5 +142,12 @@ public class turnBasedCombat : MonoBehaviour {
     {
         choiceOneMade = false;
         choiceTwoMade = false;
+        SetHealthBar();
+    }
+
+    private void SetHealthBar()
+    {
+        playerOneHealthBar.value = playerOneHealth.playerHealth;
+        playerTwoHealthBar.value = playerTwoHealth.playerHealth;
     }
 }
