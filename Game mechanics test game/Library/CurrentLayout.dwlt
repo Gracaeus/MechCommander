@@ -110,7 +110,11 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 146
+=======
+  controlID: 90
+>>>>>>> parent of 7235384... Rebuild
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +138,11 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 51
+=======
+  controlID: 124
+>>>>>>> parent of 7235384... Rebuild
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,7 +218,11 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 75
+=======
+  controlID: 104
+>>>>>>> parent of 7235384... Rebuild
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -392,9 +404,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 181.34518, y: 88.383255, z: -187.74506}
+    m_Target: {x: 291.23557, y: 195.14217, z: 411.85217}
     speed: 2
-    m_Value: {x: 181.34518, y: 88.383255, z: -187.74506}
+    m_Value: {x: 291.23557, y: 195.14217, z: 411.85217}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -422,9 +434,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.050099082, y: 0.9154121, z: -0.12043501, w: 0.3807967}
+    m_Target: {x: 0.02452088, y: 0.52467316, z: -0.01512125, w: 0.8508163}
     speed: 2
-    m_Value: {x: 0.050099082, y: 0.9154121, z: -0.120435, w: 0.3807967}
+    m_Value: {x: 0.024520876, y: 0.5246731, z: -0.015121249, w: 0.8508162}
   m_Size:
     m_Target: 530.9873
     speed: 2
@@ -614,6 +626,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -622,13 +635,29 @@ MonoBehaviour:
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\nkhonculada\Documents\GitHub\MechCommander\Game mechanics
     test game
+=======
+    - Assets/Prefabs
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Prefabs
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: /Users/kenji/Documents/GitHub/MechCommander/Game mechanics test
+    game
+>>>>>>> parent of 7235384... Rebuild
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 54310000
     m_LastClickedID: 12628
     m_ExpandedIDs: 000000005431000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 5a2a0000
+    m_LastClickedID: 10842
+    m_ExpandedIDs: 000000004829000000ca9a3bffffff7f
+>>>>>>> parent of 7235384... Rebuild
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

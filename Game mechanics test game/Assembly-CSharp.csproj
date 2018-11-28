@@ -66,12 +66,10 @@
     <Compile Include="Assets\Script\fireBullet.cs" />
     <Compile Include="Assets\Script\fireScriptTwo.cs" />
     <Compile Include="Assets\Script\healing.cs" />
-    <Compile Include="Assets\Script\healingBehaviour.cs" />
     <Compile Include="Assets\Script\health.cs" />
     <Compile Include="Assets\Script\playerTwoSpawn.cs" />
     <Compile Include="Assets\Script\shieldBehaviour.cs" />
     <Compile Include="Assets\Script\shieldGenerator.cs" />
-    <Compile Include="Assets\Script\turnBasedCombat.cs" />
     <Compile Include="Assets\Script\turnManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/nkhonculada/Documents/GitHub/MechCommander/Game mechanics test game/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
