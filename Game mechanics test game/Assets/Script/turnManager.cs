@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 
 public class turnManager : MonoBehaviour {
@@ -55,19 +54,16 @@ public class turnManager : MonoBehaviour {
         {
             moveTwo = "attack";
             choiceOneMade = true;
-            System.Console.WriteLine("Player One Attack");
         }
         if (Input.GetButtonDown("Shield1"))
         {
             moveTwo = "shield";
             choiceOneMade = true;
-            System.Console.WriteLine("Player One Shield");
         }
         if (Input.GetButtonDown("Heal1"))
         {
             moveTwo = "heal";
             choiceOneMade = true;
-            System.Console.WriteLine("Player One Heal");
         }
     }
 
@@ -77,19 +73,16 @@ public class turnManager : MonoBehaviour {
         {
             moveTwo = "attack";
             choiceTwoMade = true;
-            System.Console.WriteLine("Player Two Attack");
         }
         if (Input.GetButtonDown("Shield2"))
         {
             moveTwo = "shield";
             choiceTwoMade = true;
-            System.Console.WriteLine("Player Two Shield");
         }
         if (Input.GetButtonDown("Heal2"))
         {
             moveTwo = "heal";
             choiceTwoMade = true;
-            System.Console.WriteLine("Player Two Heal");
         }
         
 	}
@@ -98,32 +91,36 @@ public class turnManager : MonoBehaviour {
 	{
         //Player One move
         {
-            switch (choice)
+            if (choice == "attack")
             {
-                case "attack":
-                    playerOneAttack.Fire();
-                    break;
-                case "shield":
-                    Instantiate(shieldPrefab, shieldSpawnOne.position, shieldSpawnOne.rotation);
-                    break;
-                case "heal":
-                    Instantiate(healPrefab, healSpawnOne.position, healSpawnOne.rotation);
-                    break;
+                playerOneAttack.Fire();
+                //Instantiate(bulletPrefab, bulletSpawnOne.position, bulletSpawnOne.rotation);
+                //Invoke("SetFiring", fireTime);
+            }
+            else if (choice == "shield")
+            {
+                Instantiate(shieldPrefab, shieldSpawnOne.position, shieldSpawnOne.rotation);
+            }
+            else if (choice == "heal")
+            {
+                Instantiate(healPrefab, healSpawnOne.position, healSpawnOne.rotation);
             }
         }
         // Player Two move
         {
-            switch (secondChoice)
+            if (secondChoice == "attack")
             {
-                case "attack":
-                    playerTwoAttack.Fire();
-                    break;
-                case "shield":
-                    Instantiate(shieldPrefab, shieldSpawnTwo.position, shieldSpawnTwo.rotation);
-                    break;
-                case "heal":
-                    Instantiate(healPrefab, healSpawnTwo.position, healSpawnTwo.rotation);
-                    break;
+                playerTwoAttack.Fire();
+                //Instantiate(bulletPrefab, bulletSpawnTwo.position, bulletSpawnTwo.rotation);
+                //Invoke("SetFiring", fireTime);
+            }
+            else if (secondChoice == "shield")
+            {
+                Instantiate(shieldPrefab, shieldSpawnTwo.position, shieldSpawnTwo.rotation);
+            }
+            else if (secondChoice == "heal")
+            {
+                Instantiate(healPrefab, healSpawnTwo.position, healSpawnTwo.rotation);
             }
         }
 
