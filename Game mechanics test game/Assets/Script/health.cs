@@ -1,27 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class health : MonoBehaviour
 {
 	public float playerStartHealth=100f;
 	public float playerHealth;
+
+    public Slider healthBar;
+    public GameObject healthBarUI;
+
 	//public Rigidbody rb;
- //   public turnManager postion;
- //   public Transform mySpawn;
+    //public turnManager postion;
+    //public Transform mySpawn;
     
 	// Use this for initialization
 	void OnEnable()
 	{
 		playerHealth = playerStartHealth;
-		//rb = GetComponent<Rigidbody>();
-		//rb.isKinematic = true;
-		gameObject.SetActive(true);
-        //SetPosition();
-	}
+        gameObject.SetActive(true);
+        //healthBar.value = playerHealth;
+        //SetPosition();    
+        //rb = GetComponent<Rigidbody>();
+        //rb.isKinematic = true;
+    }
 
-	// Update is called once per frame
-	void FixedUpdate()
+    // Update is called once per frame
+    void FixedUpdate()
 	{
 		
 		//if (playerHealth <= 0)
@@ -32,6 +38,7 @@ public class health : MonoBehaviour
 	public void Hit(float damage)
 	{
 		playerHealth -= damage;
+        //SetHealthBar();
 		if (playerHealth <= 1)
 		{
 			//rb.isKinematic = false;
@@ -45,6 +52,7 @@ public class health : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 	//public void SetPosition()
 	//{
 	//	if(mySpawn.tag == "playerOneSpawn")
@@ -57,4 +65,9 @@ public class health : MonoBehaviour
  //       }
 
  //   }
+
+    void SetHealthBar()
+    {
+        healthBar.value = playerHealth;
+    }
 }
