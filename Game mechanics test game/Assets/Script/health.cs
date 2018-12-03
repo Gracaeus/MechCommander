@@ -35,7 +35,7 @@ public class health : MonoBehaviour
 		//	rb.isKinematic = false;
 		//}
 	}
-	public void Hit(float damage)
+	void Hit(float damage)
 	{
 		playerHealth -= damage;
         //SetHealthBar();

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class shieldBehaviour : MonoBehaviour {
 
-    public float shieldHP;
+    protected float shieldHP;
+    private float baseShieldHP=8F;
 
 	public float destroyTime = 2f;
 	Animator anime;
 
 	void Start()
 	{
-		shieldHP = 100F;
+		shieldHP = baseShieldHP;
 		Invoke("Die", destroyTime);
 	}
 	void Die()
@@ -23,8 +24,6 @@ public class shieldBehaviour : MonoBehaviour {
     public void takeDamage(float damage)
     {
         shieldHP -= damage;
-
-
         if (shieldHP <= 0)
         {
             Destroy(gameObject);

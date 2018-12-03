@@ -15,5 +15,10 @@ public class healing : MonoBehaviour {
 	{
 		Instantiate(healingPrefab, healingSpawn.position, healingSpawn.rotation);
 	}
+
+    void HealPlayer()
+    {
+
+    }
 	
 }

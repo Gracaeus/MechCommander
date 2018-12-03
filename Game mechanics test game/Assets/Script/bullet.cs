@@ -37,13 +37,22 @@ public class bullet : MonoBehaviour {
         }
     }
 
-	//private void OnTrigger(Collider collision)
-	//{
-	//	if (collision.gameObject.CompareTag("shield"))
-	//	{
-	//		collision.SendMessage("Hit", damage);
-	//	}
-	//}
+    private void OnCollision (Collider collision)
+    {
+        if (collision.gameObject.CompareTag("shield"))
+        {
+            collision.SendMessage("takeDamage", damage);
+
+        }
+    }
+
+    //private void OnTrigger(Collider collision)
+    //{
+    //	if (collision.gameObject.CompareTag("shield"))
+    //	{
+    //		collision.SendMessage("Hit", damage);
+    //	}
+    //}
 }
 
 

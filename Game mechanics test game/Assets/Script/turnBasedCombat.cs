@@ -28,6 +28,9 @@ public class turnBasedCombat : MonoBehaviour {
     public Slider playerOneHealthBar;
     public Slider playerTwoHealthBar;
 
+    private int turnCounter=0;
+    public Text textCounter;
+
 	void Start () 
     {
         //Sets the choice made to false so the players can pick their choices
@@ -103,6 +106,7 @@ public class turnBasedCombat : MonoBehaviour {
     //Converts the button pressed into an action
     private void TurnPlay(string choice, string choiceTwo)
     {
+        turnCounter += 1;
         switch (choice)
         {
             case "attack":
@@ -134,12 +138,13 @@ public class turnBasedCombat : MonoBehaviour {
                 moveTwo = "";
                 break;
         }
-
+       
         EndTurn();
     }
 
     private void EndTurn()
     {
+        textCounter.text = turnCounter.ToString();
         choiceOneMade = false;
         choiceTwoMade = false;
         SetHealthBar();
