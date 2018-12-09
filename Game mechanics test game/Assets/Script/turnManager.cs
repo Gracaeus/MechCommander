@@ -46,7 +46,7 @@ public class turnManager : MonoBehaviour {
 		if (choiceOneMade == true && choiceTwoMade == true)
 		{
 			Play(moveOne,moveTwo);
-            EndTurn();
+            UnityEngine.Debug.Log("Play Called");
 		}
 	}
 
@@ -97,7 +97,7 @@ public class turnManager : MonoBehaviour {
 
 	private void Play(string choice, string secondChoice)
 	{
-        //EndTurn();
+        EndTurn();
         //Player One move
         {
             switch (choice)

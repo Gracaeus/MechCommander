@@ -31,6 +31,9 @@ public class turnBasedCombat : MonoBehaviour {
     private int turnCounter=0;
     public Text textCounter;
 
+    private bool newTurn = true;
+
+
 	void Start () 
     {
         //Sets the choice made to false so the players can pick their choices
@@ -48,58 +51,72 @@ public class turnBasedCombat : MonoBehaviour {
         playerTwoAttack = playerTwoAsset.GetComponent<fireBullet>();
         playerTwoHeal = playerTwoAsset.GetComponent<healing>();
         playerTwoHealth = playerTwoAsset.GetComponent<health>();
-
+        moveOne = "";
+        moveTwo = "";
     }
 
     // Runs the methods that allow the players to pick
-    void FixedUpdate () 
+    void Update () 
     {
-        PlayerOne();
-        PlayerTwo();
-
+        if (newTurn != false)
+        {
+            TurnSetup();
+        }
+        PlayersChoices();
         if (choiceOneMade == true && choiceTwoMade == true)
         {
             TurnPlay(moveOne, moveTwo);
         }
 	}
-
+    private void PlayersChoices()
+    {
+        PlayerOne();
+        PlayerTwo();
+    }
     //Allows player one to pick their move
     private void PlayerOne()
     {
-        if (Input.GetButtonDown("Attack1"))
+        if (Input.GetButton("Attack1")&& moveOne == "")
         {
             moveOne = "attack";
             choiceOneMade = true;
+            Debug.Log("Choice Made");
+
         }
-        else if (Input.GetButtonDown("Shield1"))
+        else if (Input.GetButton("Shield1")&& moveOne == "")
         {
             moveOne = "shield";
             choiceOneMade = true;
+            Debug.Log("Choice Made");
         }
-        else if (Input.GetButtonDown("Heal1"))
+        else if (Input.GetButton("Heal1")&& moveOne == "")
         {
             moveOne = "heal";
             choiceOneMade = true;
+            Debug.Log("Choice Made");
         }
     }
 
     //Allows player two to pick their move
     private void PlayerTwo()
     {
-        if (Input.GetButtonDown("Attack2"))
+        if (Input.GetButton("Attack2") && moveTwo == "")
         {
             moveTwo = "attack";
             choiceTwoMade = true;
+            Debug.Log("Choice Made");
         }
-        else if (Input.GetButtonDown("Shield2"))
+        else if (Input.GetButton("Shield2") && moveTwo == "")
         {
             moveTwo = "shield";
             choiceTwoMade = true;
+            Debug.Log("Choice Made");
         }
-        else if (Input.GetButtonDown("Heal2"))
+        else if (Input.GetButton("Heal2") && moveTwo == "")
         {
             moveTwo = "heal";
             choiceTwoMade = true;
+            Debug.Log("Choice Made");
         }
     }
 
@@ -107,19 +124,24 @@ public class turnBasedCombat : MonoBehaviour {
     private void TurnPlay(string choice, string choiceTwo)
     {
         turnCounter += 1;
+        //PlayerOne();
+        //PlayerTwo();
         switch (choice)
         {
             case "attack":
                 playerOneAttack.Fire();
                 moveOne = "";
+                Debug.Log("Move Reset");
                 break;
             case "shield":
                 playerOneShield.SpawnShield();
                 moveOne = "";
+                Debug.Log("Move Reset");
                 break;
             case "heal":
                 playerOneHeal.SpawnHealth();
                 moveOne = "";
+                Debug.Log("Move Reset");
                 break;
         }
 
@@ -128,28 +150,44 @@ public class turnBasedCombat : MonoBehaviour {
             case "attack":
                 playerTwoAttack.Fire();
                 moveTwo = "";
+                Debug.Log("Move Reset");
                 break;
             case "shield":
                 playerTwoShield.SpawnShield();
                 moveTwo = "";
+                Debug.Log("Move Reset");
                 break;
             case "heal":
                 playerTwoHeal.SpawnHealth();
                 moveTwo = "";
+                Debug.Log("Move Reset");
                 break;
         }
        
         EndTurn();
     }
-
+    //Debug this end turn
     private void EndTurn()
     {
         textCounter.text = turnCounter.ToString();
         choiceOneMade = false;
         choiceTwoMade = false;
         SetHealthBar();
+        newTurn = true;
+        Debug.Log("End Turn Called");
     }
-
+    private void TurnSetup()
+    {
+        if (choiceOneMade != false || choiceTwoMade != false)
+        {
+            choiceOneMade = false;
+            choiceTwoMade = false;
+            moveOne = "";
+            moveTwo = "";
+            newTurn = false;
+            Debug.Log("Full Reset");
+        }
+    }
     private void SetHealthBar()
     {
         playerOneHealthBar.value = playerOneHealth.playerHealth;
