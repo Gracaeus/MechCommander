@@ -58,11 +58,20 @@ public class turnBasedCombat : MonoBehaviour {
     // Runs the methods that allow the players to pick
     void Update () 
     {
-        if (newTurn != false)
+        //f (choiceOneMade == false && choiceTwoMade == false)
+        //{
+           // TurnSetup();
+       // }
+        //PlayersChoices();
+
+        if (choiceOneMade == false)
         {
-            TurnSetup();
+            PlayerOne();
         }
-        PlayersChoices();
+        if (choiceTwoMade == false)
+        {
+            PlayerTwo();
+        }
         if (choiceOneMade == true && choiceTwoMade == true)
         {
             TurnPlay(moveOne, moveTwo);
@@ -76,47 +85,47 @@ public class turnBasedCombat : MonoBehaviour {
     //Allows player one to pick their move
     private void PlayerOne()
     {
-        if (Input.GetButton("Attack1")&& moveOne == "")
+        if (Input.GetButtonUp("Attack1")&& moveOne == "")
         {
             moveOne = "attack";
             choiceOneMade = true;
-            Debug.Log("Choice Made");
+            Debug.Log("Player One Choice Made");
 
         }
-        else if (Input.GetButton("Shield1")&& moveOne == "")
+        else if (Input.GetButtonUp("Shield1")&& moveOne == "")
         {
             moveOne = "shield";
             choiceOneMade = true;
-            Debug.Log("Choice Made");
+            Debug.Log("Player One Choice Made");
         }
-        else if (Input.GetButton("Heal1")&& moveOne == "")
+        else if (Input.GetButtonUp("Heal1")&& moveOne == "")
         {
             moveOne = "heal";
             choiceOneMade = true;
-            Debug.Log("Choice Made");
+            Debug.Log("Player One Choice Made");
         }
     }
 
     //Allows player two to pick their move
     private void PlayerTwo()
     {
-        if (Input.GetButton("Attack2") && moveTwo == "")
+        if (Input.GetButtonUp("Attack2") && moveTwo == "")
         {
             moveTwo = "attack";
             choiceTwoMade = true;
-            Debug.Log("Choice Made");
+            Debug.Log("Player Two Choice Made");
         }
-        else if (Input.GetButton("Shield2") && moveTwo == "")
+        else if (Input.GetButtonUp("Shield2") && moveTwo == "")
         {
             moveTwo = "shield";
             choiceTwoMade = true;
-            Debug.Log("Choice Made");
+            Debug.Log("Player Two Choice Made");
         }
-        else if (Input.GetButton("Heal2") && moveTwo == "")
+        else if (Input.GetButtonUp("Heal2") && moveTwo == "")
         {
             moveTwo = "heal";
             choiceTwoMade = true;
-            Debug.Log("Choice Made");
+            Debug.Log("Player Two Choice Made");
         }
     }
 
