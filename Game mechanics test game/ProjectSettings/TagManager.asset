@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - playerOneSpawn
   - playerTwoSpawn
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Player Camera
+  - Main Camera
   - 
   - 
   - 
