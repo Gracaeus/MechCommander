@@ -86,7 +86,7 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Jump
+    m_Name: Play Turn
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -246,11 +246,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Submit
+    m_Name: Set Power 1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: return
+    positiveButton: k
     altNegativeButton: 
     altPositiveButton: joystick button 0
     gravity: 1000
@@ -262,11 +262,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Submit
+    m_Name: Set Power 2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: enter
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: space
     gravity: 1000
@@ -278,11 +278,11 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Cancel
+    m_Name: Submit
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: escape
+    positiveButton: return
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000

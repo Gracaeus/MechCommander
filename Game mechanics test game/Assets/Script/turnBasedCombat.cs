@@ -4,35 +4,43 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class turnBasedCombat : MonoBehaviour {
+
+    //These are used to control the flow of the game 
     private bool choiceOneMade;
     private bool choiceTwoMade;
-
     private string moveOne;
     private string moveTwo;
 
+    //These are the assets and the scripts that need to be accessed to do work
     public GameObject playerOneAsset;
     public GameObject playerTwoAsset;
-
     private shieldGenerator playerOneShield;
     private shieldGenerator playerTwoShield;
-
     private fireBullet playerOneAttack;
     private fireBullet playerTwoAttack;
-
     private healing playerOneHeal;
     private healing playerTwoHeal;
-
     private health playerOneHealth;
     private health playerTwoHealth;
-
     public Slider playerOneHealthBar;
     public Slider playerTwoHealthBar;
 
+    //Sets what turn the game is on
     private int turnCounter=0;
     public Text textCounter;
-
     private bool newTurn = true;
 
+    //This sets the camera changes 
+    public GameObject PlayerOneCamera;
+    public GameObject PlayerTwoCamera;
+
+    //These are needed for when the player is setting the power level
+    private bool playerOnePowerSet;
+    private bool playerTwoPowerSet;
+    public Slider playerOnePowerBar;
+    public Slider playerTwoPowerBar;
+    private float playerOnePowerValue;
+    private float playerTwoPowerValue;
 
 	void Start () 
     {
@@ -53,6 +61,11 @@ public class turnBasedCombat : MonoBehaviour {
         playerTwoHealth = playerTwoAsset.GetComponent<health>();
         moveOne = "";
         moveTwo = "";
+
+        playerOnePowerSet = false;
+        playerTwoPowerSet = false;
+        playerOnePowerValue = 5f;
+        playerTwoPowerValue = 5f;
     }
 
     // Runs the methods that allow the players to pick
@@ -74,7 +87,19 @@ public class turnBasedCombat : MonoBehaviour {
         }
         if (choiceOneMade == true && choiceTwoMade == true)
         {
-            TurnPlay(moveOne, moveTwo);
+            if (playerOnePowerSet==false)
+            {
+                PlayerOneSetPowerValue();
+            }
+            if (playerTwoPowerSet == false)
+            {
+                PlayerTwoSetPowerValue();
+            }
+            if (playerOnePowerSet == true && playerTwoPowerSet == true && Input.GetButtonUp("Play Turn"))
+            {
+                TurnPlay(moveOne, moveTwo);
+            }
+
         }
 	}
     private void PlayersChoices()
@@ -90,6 +115,7 @@ public class turnBasedCombat : MonoBehaviour {
             moveOne = "attack";
             choiceOneMade = true;
             Debug.Log("Player One Choice Made");
+            
 
         }
         else if (Input.GetButtonUp("Shield1")&& moveOne == "")
@@ -103,6 +129,10 @@ public class turnBasedCombat : MonoBehaviour {
             moveOne = "heal";
             choiceOneMade = true;
             Debug.Log("Player One Choice Made");
+        }
+        if (choiceOneMade == true)
+        {
+            PlayerOneCamera.SetActive(false);
         }
     }
 
@@ -126,6 +156,10 @@ public class turnBasedCombat : MonoBehaviour {
             moveTwo = "heal";
             choiceTwoMade = true;
             Debug.Log("Player Two Choice Made");
+        }
+        if(choiceTwoMade==true)
+        {
+            PlayerTwoCamera.SetActive(false);
         }
     }
 
@@ -184,6 +218,8 @@ public class turnBasedCombat : MonoBehaviour {
         SetHealthBar();
         newTurn = true;
         Debug.Log("End Turn Called");
+        PlayerOneCamera.SetActive(true);
+        PlayerTwoCamera.SetActive(true);
     }
     private void TurnSetup()
     {
@@ -201,5 +237,40 @@ public class turnBasedCombat : MonoBehaviour {
     {
         playerOneHealthBar.value = playerOneHealth.playerHealth;
         playerTwoHealthBar.value = playerTwoHealth.playerHealth;
+    }
+
+    private void PlayerOneSetPowerValue()
+    {
+        if (Input.GetButton("Set Power 1")&& !playerOnePowerSet)
+        {
+            playerOnePowerValue += 5f * Time.deltaTime;
+            if (playerOnePowerValue > 10f)
+            {
+                playerOnePowerValue = 5f;
+            }
+            playerOnePowerBar.value = playerOnePowerValue;
+        }
+        if( Input.GetButtonUp("Set Power 1"))
+        {
+            playerOnePowerSet = true;
+            playerOnePowerBar.value = playerOnePowerValue;
+        }
+    }
+    private void PlayerTwoSetPowerValue()
+    {
+        if (Input.GetButton("Set Power 2") && !playerTwoPowerSet)
+        {
+            playerTwoPowerValue += 5f * Time.deltaTime;
+            if (playerTwoPowerValue > 10f)
+            {
+                playerTwoPowerValue = 5f;
+            }
+            playerTwoPowerBar.value = playerTwoPowerValue;
+        }
+        if (Input.GetButtonUp("Set Power 2"))
+        {
+            playerTwoPowerSet = true;
+            playerTwoPowerBar.value = playerOnePowerValue;
+        }
     }
 }

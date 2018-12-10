@@ -5,7 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
     public float speed = 5.0f;
     public float destroyTime = 0.07f;
-    public float damage = 10f;
+    public float damage=10f;
 
 	//private health player;
  //   private shieldBehaviour shield;
@@ -16,6 +16,7 @@ public class bullet : MonoBehaviour {
     void Start()
     {
         Invoke("Die", destroyTime);
+        //damage = Random.RandomRange(5f, 10f);
 		//player = playerAsset.GetComponent<health>();
   //      shield = shieldAsset.GetComponent<shieldBehaviour>();
 
