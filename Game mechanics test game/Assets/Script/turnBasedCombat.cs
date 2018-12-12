@@ -202,7 +202,7 @@ public class turnBasedCombat : MonoBehaviour {
     //Converts the button pressed into an action
     private void TurnPlay(string choice, string choiceTwo)
     {
-        turnCounter += 1;
+        //turnCounter += 1;
         //PlayerOne();
         //PlayerTwo();
         switch (choice)
@@ -248,6 +248,7 @@ public class turnBasedCombat : MonoBehaviour {
         continueHint.SetActive(true);
         if (Input.GetButtonUp("Play Turn"))
         {
+            turnCounter += 1;
             EndTurn();
         }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
     public float speed = 5.0f;
     public float destroyTime = 0.07f;
-    public float damage=10f;
+    public float damage;
 
 	//private health player;
  //   private shieldBehaviour shield;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class shieldBehaviour : MonoBehaviour {
 
     protected float shieldHP;
-    private float baseShieldHP=8F;
+    private float baseShieldHP;
 
 	public float destroyTime = 2f;
 	Animator anime;

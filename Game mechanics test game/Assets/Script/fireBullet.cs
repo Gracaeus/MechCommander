@@ -15,8 +15,9 @@ public class fireBullet : MonoBehaviour {
     public void Fire(float damage)
     {
         isFiring = true;
-        bulletPrefab.SendMessage("SetDamage", damage);
-        Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+       // bulletPrefab.SendMessage("SetDamage", damage);
+        GameObject Bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        Bullet.SendMessage("SetDamage", damage);
 
         Invoke("SetFiring", fireTime);
     }

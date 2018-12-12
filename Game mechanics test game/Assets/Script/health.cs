@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class health : MonoBehaviour
 {
-	public float playerStartHealth=100f;
+	public float playerStartHealth=10f;
 	public float playerHealth;
 
     public Slider healthBar;
@@ -44,16 +44,17 @@ public class health : MonoBehaviour
 		{
 			//rb.isKinematic = false;
 			gameObject.SetActive(false);
-            GetComponent<Rigidbody>().isKinematic = false;
+            Die();
+            //GetComponent<Rigidbody>().isKinematic = false;
             //Invoke("Die", destroyTime);
 		}
 	}
 
     void Die()
     {
-        Destroy(gameObject);
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        Debug.Log("RIP");
+        gameObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Heal( float health)
