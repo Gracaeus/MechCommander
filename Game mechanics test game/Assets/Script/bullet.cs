@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class bullet : MonoBehaviour {
     public float speed = 5.0f;
     public float destroyTime = 0.07f;
@@ -35,16 +36,25 @@ public class bullet : MonoBehaviour {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.SendMessage("Hit",damage);
+            Debug.Log("Damaging Player:" + damage);
+            Die();
+        }
+        else if(collision.gameObject.CompareTag("shield"))
+        {
+            collision.SendMessage("takeDamage", damage);
+            Debug.Log("Damaging Shield:" + damage);
+
         }
     }
 
-    private void OnCollision (Collider collision)
+    private void HealthUpdate (float shieldHealth)
     {
-        if (collision.gameObject.CompareTag("shield"))
-        {
-            collision.SendMessage("takeDamage", damage);
+        damage -= shieldHealth;
+    }
 
-        }
+    void SetDamage(float amount)
+    {
+        damage = amount;
     }
 
     //private void OnTrigger(Collider collision)

@@ -66,6 +66,7 @@
     <Compile Include="Assets\Script\displayScript.cs" />
     <Compile Include="Assets\Script\fireBullet.cs" />
     <Compile Include="Assets\Script\fireScriptTwo.cs" />
+    <Compile Include="Assets\Script\gameControl.cs" />
     <Compile Include="Assets\Script\healing.cs" />
     <Compile Include="Assets\Script\healingBehaviour.cs" />
     <Compile Include="Assets\Script\health.cs" />

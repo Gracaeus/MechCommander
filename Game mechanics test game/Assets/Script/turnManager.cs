@@ -103,7 +103,7 @@ public class turnManager : MonoBehaviour {
             switch (choice)
             {
                 case "attack":
-                    playerOneAttack.Fire();
+                    //playerOneAttack.Fire();
                     break;
                 case "shield":
                     Instantiate(shieldPrefab, shieldSpawnOne.position, shieldSpawnOne.rotation);
@@ -118,7 +118,7 @@ public class turnManager : MonoBehaviour {
             switch (secondChoice)
             {
                 case "attack":
-                    playerTwoAttack.Fire();
+                    //playerTwoAttack.Fire();
                     break;
                 case "shield":
                     Instantiate(shieldPrefab, shieldSpawnTwo.position, shieldSpawnTwo.rotation);

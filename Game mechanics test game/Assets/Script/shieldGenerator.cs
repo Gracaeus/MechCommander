@@ -29,8 +29,9 @@ public class shieldGenerator : MonoBehaviour {
         }
     }*/
 
-	public void SpawnShield()
+	public void SpawnShield(float HP)
 	{
+        shieldPrefab.SendMessage("SetHP", HP);
 		Instantiate(shieldPrefab, shieldSpawn.position, shieldSpawn.rotation);
 	}
 

@@ -29,5 +29,18 @@ public class shieldBehaviour : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-	
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            collision.SendMessage("HealthUpdate", baseShieldHP);
+            
+        }
+    }
+    void SetHP(float amount)
+    {
+        baseShieldHP = amount;
+    }
+
 }

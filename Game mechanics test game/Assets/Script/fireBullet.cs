@@ -12,9 +12,10 @@ public class fireBullet : MonoBehaviour {
 	{
 
 	}
-    public void Fire()
+    public void Fire(float damage)
     {
         isFiring = true;
+        bulletPrefab.SendMessage("SetDamage", damage);
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
 
         Invoke("SetFiring", fireTime);

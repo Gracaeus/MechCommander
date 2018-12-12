@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class health : MonoBehaviour
@@ -51,20 +52,27 @@ public class health : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
-	//public void SetPosition()
-	//{
-	//	if(mySpawn.tag == "playerOneSpawn")
- //       {
- //           postion.playerOneAsset = gameObject;
- //       }
- //       if (mySpawn.tag == "playerTwoSpawn")
- //       {
- //           postion.playerTwoAsset = gameObject;
- //       }
+    void Heal( float health)
+    {
+        playerHealth += health;
+    }
 
- //   }
+    //public void SetPosition()
+    //{
+    //	if(mySpawn.tag == "playerOneSpawn")
+    //       {
+    //           postion.playerOneAsset = gameObject;
+    //       }
+    //       if (mySpawn.tag == "playerTwoSpawn")
+    //       {
+    //           postion.playerTwoAsset = gameObject;
+    //       }
+
+    //   }
 
     void SetHealthBar()
     {

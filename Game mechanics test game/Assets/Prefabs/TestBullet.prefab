@@ -236,10 +236,6 @@ MonoBehaviour:
   speed: 100
   destroyTime: 1
   damage: 10
-  shieldAsset: {fileID: 1459269359089678, guid: e6ff5f56776f895408f919eca8d5c5dd,
-    type: 2}
-  playerAsset: {fileID: 1629869187248464, guid: 3550e7d0d67bd4f45b8e4dc7e8ebadb9,
-    type: 2}
 --- !u!136 &136962812191922122
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -247,7 +243,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1420733167282184}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.42907694
   m_Height: 1.4198959
