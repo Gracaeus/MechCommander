@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class health : MonoBehaviour
 {
-	public float playerStartHealth=10f;
+	public float playerStartHealth = 10f;
 	public float playerHealth;
 
     public Slider healthBar;
     public GameObject healthBarUI;
+
+    public bool burnDamage;
+    private int burnCount = 0 ;
 
 	//public Rigidbody rb;
     //public turnManager postion;
@@ -21,6 +24,7 @@ public class health : MonoBehaviour
 	{
 		playerHealth = playerStartHealth;
         gameObject.SetActive(true);
+        burnDamage = false;
         //healthBar.value = playerHealth;
         //SetPosition();    
         //rb = GetComponent<Rigidbody>();
@@ -40,7 +44,7 @@ public class health : MonoBehaviour
 	{
 		playerHealth -= damage;
         //SetHealthBar();
-		if (playerHealth <= 1)
+		if (playerHealth < 1)
 		{
 			//rb.isKinematic = false;
 			gameObject.SetActive(false);
@@ -49,6 +53,26 @@ public class health : MonoBehaviour
             //Invoke("Die", destroyTime);
 		}
 	}
+
+    public void BurnDamage()
+    {
+        playerHealth -= 5;
+        burnCount += 1;
+        if (playerHealth < 1)
+        {
+            Die();
+        }
+        if (burnCount == 5)
+        {
+            burnDamage = false;
+            burnCount = 0;
+        }
+    }
+
+    void SetBurnOn()
+    {
+        burnDamage = true;
+    }
 
     void Die()
     {

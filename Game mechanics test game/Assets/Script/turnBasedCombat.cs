@@ -166,6 +166,12 @@ public class turnBasedCombat : MonoBehaviour {
             choiceOneMade = true;
             Debug.Log("Player One Choice Made");
         }
+        else if (Input.GetButtonUp("Special 1") && moveOne == "")
+        {
+            moveOne = "special";
+            choiceOneMade = true;
+            Debug.Log("Player One Choice Made");
+        }
         if (choiceOneMade == true)
         {
             PlayerOneCamera.SetActive(false);
@@ -193,7 +199,13 @@ public class turnBasedCombat : MonoBehaviour {
             choiceTwoMade = true;
             Debug.Log("Player Two Choice Made");
         }
-        if(choiceTwoMade==true)
+        else if (Input.GetButtonUp("Special 2") && moveTwo == "")
+        {
+            moveTwo = "special";
+            choiceTwoMade = true;
+            Debug.Log("Player Two Choice Made");
+        }
+        if (choiceTwoMade==true)
         {
             PlayerTwoCamera.SetActive(false);
         }
@@ -222,6 +234,11 @@ public class turnBasedCombat : MonoBehaviour {
                 moveOne = "";
                 Debug.Log("Move Reset");
                 break;
+            case "special":
+                playerOneAttack.NapalmShot(playerOnePowerValue);
+                moveOne = "";
+                Debug.Log("Move Reset");
+                break;
         }
 
         switch (choiceTwo)
@@ -238,6 +255,11 @@ public class turnBasedCombat : MonoBehaviour {
                 break;
             case "heal":
                 playerTwoHeal.SpawnHealth(playerTwoPowerValue);
+                moveTwo = "";
+                Debug.Log("Move Reset");
+                break;
+            case "special":
+                playerTwoAttack.NapalmShot(playerTwoPowerValue);
                 moveTwo = "";
                 Debug.Log("Move Reset");
                 break;
@@ -260,16 +282,34 @@ public class turnBasedCombat : MonoBehaviour {
         textCounter.text = turnCounter.ToString();
         choiceOneMade = false;
         choiceTwoMade = false;
+
         SetHealthBar();
-        newTurn = true;
+        //newTurn = true;
         Debug.Log("End Turn Called");
+
         PlayerOneCamera.SetActive(true);
         PlayerTwoCamera.SetActive(true);
+
         playerOnePowerSet = false;
         playerTwoPowerSet = false;
+
         playerTwoPowerValue = 0;
         playerOnePowerValue = 0;
+
         continueHint.SetActive(false);
+
+        if(playerOneHealth.burnDamage !=false)
+        {
+            playerOneHealth.BurnDamage();
+            Debug.Log("Player One takes burn damage");
+        }
+        if (playerTwoHealth.burnDamage != false)
+        {
+            playerTwoHealth.BurnDamage();
+            Debug.Log("Player Two takes burn damage");
+        }
+
+
     }
     private void TurnSetup()
     {

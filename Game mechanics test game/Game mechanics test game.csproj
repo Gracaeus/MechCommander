@@ -303,11 +303,14 @@
   <ItemGroup>
     <Compile Include="Assets\Script\bullet.cs" />
     <Compile Include="Assets\Script\death.cs" />
+    <Compile Include="Assets\Script\displayScript.cs" />
     <Compile Include="Assets\Script\fireBullet.cs" />
     <Compile Include="Assets\Script\fireScriptTwo.cs" />
+    <Compile Include="Assets\Script\gameControl.cs" />
     <Compile Include="Assets\Script\healing.cs" />
     <Compile Include="Assets\Script\healingBehaviour.cs" />
     <Compile Include="Assets\Script\health.cs" />
+    <Compile Include="Assets\Script\napalmBullet.cs" />
     <Compile Include="Assets\Script\playerTwoSpawn.cs" />
     <Compile Include="Assets\Script\shieldBehaviour.cs" />
     <Compile Include="Assets\Script\shieldGenerator.cs" />

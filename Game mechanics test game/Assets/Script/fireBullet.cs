@@ -5,6 +5,8 @@ using UnityEngine;
 public class fireBullet : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public GameObject napalmPrefab;
+    public GameObject quadPrefab;
     public float fireTime = 0.1f;
     private bool isFiring = false;
 
@@ -22,6 +24,19 @@ public class fireBullet : MonoBehaviour {
         Invoke("SetFiring", fireTime);
     }
 	
+    public void NapalmShot(float damage)
+    {
+        isFiring = true;
+        GameObject Bullet = Instantiate(napalmPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        Bullet.SendMessage("SetDamage", damage);
+    }
+
+    public void QuadShot (float damage)
+    {
+        GameObject Bullet = Instantiate(quadPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        Bullet.SendMessage("SetDamage", damage);
+    }
+    
     void SetFiring()
     {
         isFiring = false;
