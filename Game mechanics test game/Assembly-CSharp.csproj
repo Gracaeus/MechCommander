@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\bullet.cs" />
+    <Compile Include="Assets\Script\characterMovement.cs" />
     <Compile Include="Assets\Script\death.cs" />
     <Compile Include="Assets\Script\displayScript.cs" />
     <Compile Include="Assets\Script\fireBullet.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Script\playerTwoSpawn.cs" />
     <Compile Include="Assets\Script\shieldBehaviour.cs" />
     <Compile Include="Assets\Script\shieldGenerator.cs" />
+    <Compile Include="Assets\Script\specialBar.cs" />
     <Compile Include="Assets\Script\turnBasedCombat.cs" />
     <Compile Include="Assets\Script\turnManager.cs" />
     <Compile Include="Assets\Script\uiManager.cs" />
