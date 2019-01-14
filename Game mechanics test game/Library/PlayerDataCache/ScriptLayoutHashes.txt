@@ -1,9 +1,10 @@
-OSXStandalone
+WindowsStandalone
 PlayerPath?
-/Users/kenji/Documents/GitHub/MechCommander/Game mechanics test game/MacTest.app
+C:/Users/Kenji/Documents/GitHub/MechCommander/MechCommander.exe
 SceneListBegin?
-Assets/Scenes/Game.unity
+Assets/Scenes/TurnBasedGame.unity
 SceneListEnd?
+98c68ec780db737a8306398e8e047f11 Assembly-CSharp.dll:.characterMovement
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 13bdb7c23815c33a33b37b0ba8dd39be UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -109,6 +110,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+cfdc35fb4be4dd281ac63400e6d6ef1d Assembly-CSharp.dll:.napalmBullet
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 ec9ffe59404f1550e4634ed37e91e12c Assembly-CSharp.dll:.health
 d0dded66b4790932f283ce432d298e3b Assembly-CSharp.dll:.healingBehaviour
@@ -120,10 +122,11 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-d5734d8677e1faf936fcd73481b27a90 Assembly-CSharp.dll:.turnBasedCombat
+3660821733c5118bd6973a6ee7fc4a89 Assembly-CSharp.dll:.turnBasedCombat
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.displayScript
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.uiManager
 cfdc35fb4be4dd281ac63400e6d6ef1d Assembly-CSharp.dll:.bullet
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.specialBar
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -160,4 +163,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 1aad534bf5f616d8ab51a5c4a8bcd009 Assembly-CSharp.dll:.playerTwoSpawn
-cfdc35fb4be4dd281ac63400e6d6ef1d Assembly-CSharp.dll:.napalmBullet

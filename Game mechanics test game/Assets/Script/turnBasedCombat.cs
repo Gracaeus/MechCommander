@@ -25,8 +25,11 @@ public class turnBasedCombat : MonoBehaviour {
     public Slider playerOneHealthBar;
     public Slider playerTwoHealthBar;
 
-    //Sets what turn the game is on
-    private int turnCounter=0;
+	public Slider playerOneSpecialBar;
+	public Slider playerTwoSpecialBar;
+
+	//Sets what turn the game is on
+	private int turnCounter=0;
     public Text textCounter;
     private bool newTurn = true;
 
@@ -46,6 +49,8 @@ public class turnBasedCombat : MonoBehaviour {
     public GameObject chargeHint;
     public GameObject moveHint;
     public GameObject continueHint;
+	public GameObject specialHintOne;
+	public GameObject specialHintTwo;
 
 	void Start () 
     {
@@ -76,9 +81,14 @@ public class turnBasedCombat : MonoBehaviour {
         chargeHint.SetActive(false);
         moveHint.SetActive(false);
         continueHint.SetActive(false);
+		specialHintOne.SetActive(false);
+		specialHintTwo.SetActive(false);
+
+		playerOneSpecialBar.value = 0;
+		playerTwoSpecialBar.value = 0;
     }
 
-    // Runs the methods that allow the players to pick
+	// Runs the methods that allow the players to pick
     void Update () 
     {
         //f (choiceOneMade == false && choiceTwoMade == false)
@@ -99,7 +109,15 @@ public class turnBasedCombat : MonoBehaviour {
         {
             chargeHint.SetActive(false);
             moveHint.SetActive(true);
-            if (choiceOneMade == false)
+			if (playerOneSpecialBar.value == 10)
+			{
+				specialHintOne.SetActive(true);
+			}
+			if (playerTwoSpecialBar.value == 10)
+			{
+				specialHintTwo.SetActive(true);
+			}
+			if (choiceOneMade == false)
             {
                 PlayerOne();
             }
@@ -113,30 +131,7 @@ public class turnBasedCombat : MonoBehaviour {
                 TurnPlay(moveOne, moveTwo);
             }
         }
-        //if (choiceOneMade == false)
-        //{
-        //  PlayerOne();
-        //}
-        //if (choiceTwoMade == false)
-        // {
-        //  PlayerTwo();
-        // }
-        //if (choiceOneMade == true && choiceTwoMade == true)
-        //{
-        //  if (playerOnePowerSet==false)
-        // {
-        //     PlayerOneSetPowerValue();
-        // }
-        //  if (playerTwoPowerSet == false)
-        //  {
-        //      PlayerTwoSetPowerValue();
-        //  }
-        //  if (playerOnePowerSet == true && playerTwoPowerSet == true && Input.GetButtonUp("Play Turn"))
-        //  {
-        //      TurnPlay(moveOne, moveTwo);
-        //  }
 
-        // }
     }
     private void PlayersChoices()
     {
@@ -151,7 +146,7 @@ public class turnBasedCombat : MonoBehaviour {
             moveOne = "attack";
             choiceOneMade = true;
             Debug.Log("Player One Choice Made");
-            
+			playerOneSpecialBar.value += 1;
 
         }
         else if (Input.GetButtonUp("Shield1")&& moveOne == "")
@@ -159,18 +154,22 @@ public class turnBasedCombat : MonoBehaviour {
             moveOne = "shield";
             choiceOneMade = true;
             Debug.Log("Player One Choice Made");
-        }
+			playerOneSpecialBar.value += 2;
+		}
         else if (Input.GetButtonUp("Heal1")&& moveOne == "")
         {
             moveOne = "heal";
             choiceOneMade = true;
             Debug.Log("Player One Choice Made");
-        }
-        else if (Input.GetButtonUp("Special 1") && moveOne == "")
+			playerOneSpecialBar.value += 3;
+		}
+        else if (Input.GetButtonUp("Special 1") && moveOne == ""&& playerOneSpecialBar.value ==10)
         {
             moveOne = "special";
             choiceOneMade = true;
             Debug.Log("Player One Choice Made");
+			playerOneSpecialBar.value = 0;
+
         }
         if (choiceOneMade == true)
         {
@@ -186,25 +185,29 @@ public class turnBasedCombat : MonoBehaviour {
             moveTwo = "attack";
             choiceTwoMade = true;
             Debug.Log("Player Two Choice Made");
-        }
+			playerTwoSpecialBar.value += 1;
+		}
         else if (Input.GetButtonUp("Shield2") && moveTwo == "")
         {
             moveTwo = "shield";
             choiceTwoMade = true;
             Debug.Log("Player Two Choice Made");
-        }
+			playerTwoSpecialBar.value += 2;
+		}
         else if (Input.GetButtonUp("Heal2") && moveTwo == "")
         {
             moveTwo = "heal";
             choiceTwoMade = true;
             Debug.Log("Player Two Choice Made");
-        }
-        else if (Input.GetButtonUp("Special 2") && moveTwo == "")
+			playerTwoSpecialBar.value += 3;
+		}
+        else if (Input.GetButtonUp("Special 2") && moveTwo == "" && playerTwoSpecialBar.value ==10)
         {
             moveTwo = "special";
             choiceTwoMade = true;
             Debug.Log("Player Two Choice Made");
-        }
+			playerTwoSpecialBar.value = 0;
+		}
         if (choiceTwoMade==true)
         {
             PlayerTwoCamera.SetActive(false);
@@ -297,8 +300,15 @@ public class turnBasedCombat : MonoBehaviour {
         playerOnePowerValue = 0;
 
         continueHint.SetActive(false);
-
-        if(playerOneHealth.burnDamage !=false)
+		if (playerOneSpecialBar.value < 10)
+		{
+			specialHintOne.SetActive(false);
+		}
+		if (playerTwoSpecialBar.value < 10)
+		{
+			specialHintTwo.SetActive(false);
+		}
+		if (playerOneHealth.burnDamage !=false)
         {
             playerOneHealth.BurnDamage();
             Debug.Log("Player One takes burn damage");
@@ -351,7 +361,7 @@ public class turnBasedCombat : MonoBehaviour {
     {
         if (Input.GetButton("Set Power 2") && !playerTwoPowerSet)
         {
-            playerTwoPowerValue += 5f * Time.deltaTime;
+            playerTwoPowerValue += 20f * Time.deltaTime;
             if (playerTwoPowerValue > 10f)
             {
                 playerTwoPowerValue = 1f;
